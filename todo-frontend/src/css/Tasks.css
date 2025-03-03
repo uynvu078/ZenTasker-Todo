@@ -1,0 +1,231 @@
+
+/* Task Layout */
+.task-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: start; 
+    gap: 50px;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Task Containers */
+.task-container {
+    padding: 12px;
+    border-radius: 8px;
+    color: rgb(24, 23, 23);
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/*==========*/
+.tasks-container {
+    flex: 2;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+/*==========*/
+
+/* Hover Effect on Task */
+.task-container:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Task Priorities */
+/* .task-container.low {
+    background-color: #E4E8DA !important; 
+    color: #6F7D5C !important; 
+}
+.task-container.normal {
+    background-color: #F0E5D8 !important; 
+    color: #85756E !important; 
+}
+.task-container.high {
+    background-color: #F8E4E7 !important;
+    color: #A0566A !important;
+} */
+/* ✅ Low Priority - Sage Green */
+.task-container.low {
+    background: linear-gradient(to right, #D7E5CA, #E1EDD9); /* Soft Sage */
+    color: #4F6F52; /* Deep Olive */
+    border-left: 4px solid #4F6F52; /* Accent */
+  }
+  
+  /* ✅ Normal Priority - Champagne Beige */
+  .task-container.normal {
+    background: linear-gradient(to right, #E8D7C0, #F2E6D5); /* Soft Champagne */
+    color: #5A4D3E; /* Muted Walnut */
+    border-left: 4px solid #A68A6A; /* Soft Mocha */
+  }
+  
+  /* ✅ High Priority - Dusty Rose Gold */
+  .task-container.high {
+    background: linear-gradient(to right, #D7A1A7, #E6B7BD); /* Rose Gold */
+    color: #722F37; /* Deep Ruby */
+    border-left: 4px solid #A0566A; /* Dark Wine Red */
+  }
+  
+  /* ✅ Priority Hover Effect */
+  .task-container:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 7px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+
+/* Buttons */
+.task-buttons {
+    display: flex;
+    gap: 5px;
+    text-align: right;
+}
+
+
+/* ✅ Complete Button - Soft Mint */
+.btn-complete {
+    background: linear-gradient(to right, #B0E0A8, #C4E6BA); /* Soft Mint */
+    color: white;
+    border: 2px solid #5C8F63; /* Keeps border visible */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-complete:hover {
+    background: linear-gradient(to right, #92c888, #9cd48b); /* Deep Forest */
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* 🔄 Undo Button - Luxurious Cool Gray */
+  .btn-undo {
+    background: linear-gradient(to right, #C0C0C0, #D8D8D8); /* Rich Platinum */
+    color: black;
+    border: 2px solid #878787; /* Keeps border visible */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-undo:hover {
+    background: linear-gradient(to right, #A0A0A0, #B5B5B5); /* Muted Graphite */
+    border-color: #757575; /* Keeps border visible */
+    transform: scale(1.05);
+  }
+  
+  /* ✅ Edit Button - Royal Amethyst */
+  .btn-edit {
+    background: linear-gradient(to right, #C5A3E0, #E2C9F0); /* Soft Lavender */
+    color: white;
+    border: 2px solid #6F498F; /* Keeps border visible */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-edit:hover {
+    background: linear-gradient(to right, #bc97da, #caa3e1); /* Deep Amethyst */
+    transform: scale(1.05);
+  }
+  
+  /* ❌ Delete Button - Rich Ruby */
+  .btn-delete {
+    background: linear-gradient(to right, #D77979, #F1B0B0); /* Blush Ruby */
+    color: white;
+    border: 2px solid #913D3C; /* Keeps border visible */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-delete:hover {
+    background: linear-gradient(to right, #c76c6c, #d48d8d); /* Deep Wine */
+    transform: scale(1.05);
+  }
+  
+  
+  
+
+.overdue {
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
+/* 🔔 Reminder Styles */
+.task-reminder {
+    font-weight: bold;
+    color: #D4AF37;
+    background: #FFF3CD;
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+/* Task Title */
+.task-title {
+  flex: 1;
+  text-align: left;
+}
+
+/* Cross out completed tasks */
+.task-text.completed {
+  text-decoration: line-through;
+}
+
+/* Capitalized Task Text */
+.task-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Description Font Smaller */
+.task-description {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 2px 0 0 20px;
+}
+  
+
+/*======================================================================================*/
+
+/* 🔹 Make Layout Stack on Mobile */
+@media (max-width: 768px) {
+    .task-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tasks-container {
+        width: 90%;
+    }
+
+    .filter-add-container {
+        width: 100%;
+    }
+}
+
+/* Task fade-in animation */
+@keyframes taskFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+/* Apply animation to each task */
+.task-container {
+    animation: taskFadeIn 0.4s ease-in-out;
+}
+  

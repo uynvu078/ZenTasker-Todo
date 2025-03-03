@@ -1,0 +1,25 @@
+@import "./css/Navbar.css";
+@import "./css/Sidebar.css";
+@import "./css/Tasks.css";
+@import "./css/Styles.css";
+@import "./css/ReminderPopup.css";
+@import "./css/Auth.css";
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.main-content {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}

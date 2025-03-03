@@ -1,0 +1,76 @@
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #2C2C2C, #3A3A3A); /* Elegant gradient */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.3); /* ✅ Soft shadow effect */
+}
+
+/* Sidebar Title */
+.sidebar-title {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #D4AF37; /* Gold Accent */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Sidebar Navigation */
+.sidebar-menu {
+    flex-grow: 1; /* Push logout button to the bottom */
+    list-style: none;
+    padding: 10px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none !important; /* ✅ Removes underline */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sidebar Hover Effect */
+.sidebar-menu a:hover {
+    background-color: #D4AF37; /* Gold */
+    color: black;
+    transform: translateX(5px);
+}
+
+/* Sidebar Bottom (Logout Button) */
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.logout-btn {
+    width: 80%; /* ✅ Make button smaller */
+    margin: 20px auto; /* ✅ Center the button */
+    background-color: #B2956B; /* Darker Gold */
+    color: white;
+    padding: 10px 14px; /* ✅ Slightly smaller padding */
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: block;
+}
+
+.logout-btn:hover {
+    background-color: #D4AF37;
+    transform: scale(1.05);
+}
