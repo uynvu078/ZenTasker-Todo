@@ -17,6 +17,15 @@ router.post("/register", async (req, res) => {
             return res.status(400).json({ error: "Password should not be pre-hashed!" });
         }
 
+        if (!username || !email || !password) {
+            return res.status(400).json({ error: "All fields are required" });
+        }
+
+        const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+        if (existingUser) {
+            return res.status(400).json({ error: "Email or Username already exists" });
+        }
+
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
         console.log("🔹 Hashed password before storing:", hashedPassword);
