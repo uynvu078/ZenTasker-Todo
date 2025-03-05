@@ -82,9 +82,13 @@ const Dashboard = () => {
         completed: !taskToToggle.completed,
       });
 
+      if (!response.data) throw new Error("No data returned from server");
+
       setTasks(tasks.map((task) =>
         task._id === id ? { ...task, completed: response.data.completed } : task
       ));
+
+      fetchTasks();
     } catch (error) {
       console.error(" Error toggling task completion:", error.response?.data || error.message);
     }
