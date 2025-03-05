@@ -15,13 +15,16 @@ export default function AppRouter() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<Forgot />} />
         {/* Protect Dashboard Route */}
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         {/* Redirect unknown routes to Login */}
-        <Route path="*" element={<Navigate to="/login" replace />} />  
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
