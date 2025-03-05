@@ -39,20 +39,7 @@
     transition: all 0.3s ease;
 }
 
-/* Task Priorities */
-/* .task-container.low {
-    background-color: #E4E8DA !important; 
-    color: #6F7D5C !important; 
-}
-.task-container.normal {
-    background-color: #F0E5D8 !important; 
-    color: #85756E !important; 
-}
-.task-container.high {
-    background-color: #F8E4E7 !important;
-    color: #A0566A !important;
-} */
-/* ✅ Low Priority - Sage Green */
+/* Low Priority - Sage Green */
 .task-container.low {
     background: linear-gradient(to right, #D7E5CA, #E1EDD9); /* Soft Sage */
     color: #4F6F52; /* Deep Olive */
@@ -135,7 +122,7 @@
     transform: scale(1.05);
   }
   
-  /* ❌ Delete Button - Rich Ruby */
+  /*  Delete Button - Rich Ruby */
   .btn-delete {
     background: linear-gradient(to right, #D77979, #F1B0B0); /* Blush Ruby */
     color: white;
@@ -192,6 +179,9 @@
   margin: 2px 0 0 20px;
 }
   
+.task.completed {
+  opacity: 0.5;
+}
 
 /*======================================================================================*/
 
