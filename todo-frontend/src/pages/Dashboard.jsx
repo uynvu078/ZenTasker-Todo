@@ -75,20 +75,24 @@ const Dashboard = () => {
 
   const toggleTask = async (id) => {
     try {
-      const taskToToggle = tasks.find((task) => task._id === id);
-      if (!taskToToggle) return;
+        const taskToToggle = tasks.find((task) => task._id.toString() === id);
+        if (!taskToToggle) return;
 
-      const response = await API.patch(`/tasks/${id}`, {
-        completed: !taskToToggle.completed,
-      });
+        const response = await API.put(`/tasks/${id}`, {
+            completed: !taskToToggle.completed,
+        });
 
-      setTasks(tasks.map((task) =>
-        task._id === id ? { ...task, completed: response.data.completed } : task
-      ));
+        if (!response.data) throw new Error("No data returned from server");
+
+        setTasks(tasks.map((task) =>
+            task._id.toString() === id ? response.data : task 
+        ));
     } catch (error) {
-      console.error(" Error toggling task completion:", error.response?.data || error.message);
+        console.error(" Error toggling task completion:", error.response?.data || error.message);
     }
-  };
+};
+
+
 
   const editTask = (id, title, description, dueDate) => {
     console.log(`✏️ Editing Task ID: ${id}, Title: ${title}, Description: ${description}, Due Date: ${dueDate}`);
@@ -364,8 +368,8 @@ const Dashboard = () => {
       
             {/* Right Illustration */}
             <div className="illustration right-illustration">
-              <img src="/src/assets/pic/check.png" alt="Right Illustration" />
-              <img src="/src/assets/pic/color people.jpg" alt="Right Illustration" />
+              <img src="/check.png" alt="Checkmark" />
+              <img src="/color people.jpg" alt="Right Illustration" />
             </div>
           </div>
         </div>

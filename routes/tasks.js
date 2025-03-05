@@ -104,39 +104,36 @@ router.put("/reorder", authenticateToken, async (req, res) => {
 
 router.put("/:id", authenticateToken, async (req, res) => {
     try {
-        const { title, description, dueDate, completed } = req.body;
-        const task = await Task.findById(req.params.id);
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return res.status(400).json({ message: "Invalid task ID" });
+        }
 
-        if (!task) {
+        const { title, description, dueDate, completed } = req.body;
+
+        let updateFields = {};
+        if (title !== undefined) updateFields.title = title;
+        if (description !== undefined) updateFields.description = description;
+        if (dueDate !== undefined) {
+            updateFields.dueDate = dueDate ? new Date(dueDate + "T00:00:00.000Z") : null;
+        }
+        if (completed !== undefined) updateFields.completed = completed; // ✅ Ensures `false` is updated too
+
+        const updatedTask = await Task.findByIdAndUpdate(
+            req.params.id,
+            { $set: updateFields },
+            { new: true, runValidators: true } // ✅ Returns the updated task
+        );
+
+        if (!updatedTask) {
             return res.status(404).json({ message: "Task not found" });
         }
 
-        if (title !== undefined) {
-            task.title = title;
-        }
-        if (description !== undefined) {
-            task.description = description;
-        }
-        if (dueDate !== undefined) {
-            task.dueDate = dueDate ? new Date(dueDate + "T00:00:00.000Z") : null;
-        }
-        if (completed !== undefined) {
-            task.completed = completed;
-        }
+        console.log(`✅ Task updated: ${updatedTask._id}, Completed: ${updatedTask.completed}`);
 
-        await task.save();
-        console.log(` Task updated: ${task._id}, Due Date: ${task.dueDate}`);
-
-        res.json({
-            _id: task._id,
-            title: task.title,
-            description: task.description,
-            dueDate: task.dueDate,
-            completed: task.completed
-        });
+        res.json(updatedTask);
 
     } catch (error) {
-        console.error(" Error updating task:", error);
+        console.error("❌ Error updating task:", error);
         res.status(500).json({ message: "Error updating task" });
     }
 });
