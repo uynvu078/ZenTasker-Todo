@@ -85,7 +85,7 @@ const Dashboard = () => {
       if (!response.data) throw new Error("No data returned from server");
 
       setTasks(tasks.map((task) =>
-        task._id === id ? { ...task, completed: response.data.completed } : task
+        task._id === id ? response.data : task 
       ));
 
       fetchTasks();
@@ -119,13 +119,8 @@ const Dashboard = () => {
       console.log(`Task updated successfully:`, response.data);
   
       setTasks(tasks.map((task) =>
-        task._id === id
-          ? { ...task, 
-              title: response.data.title, 
-              description: response.data.description, 
-              dueDate: response.data.dueDate }
-          : task
-      ));
+            task._id === id ? response.data : task
+        ));
   
       setEditingTaskId(null);
       setEditedTitle("");
