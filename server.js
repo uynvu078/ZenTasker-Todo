@@ -7,7 +7,7 @@ const authenticateToken = require("./middleware/authenticateToken");
 
 app.use(express.json());
 app.use(cors({
-    origin: ["https://zentasker-todo-j0kpnzil9-uyen-vus-projects.vercel.app"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
