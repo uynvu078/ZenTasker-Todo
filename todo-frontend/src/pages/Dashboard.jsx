@@ -78,7 +78,7 @@ const Dashboard = () => {
       const taskToToggle = tasks.find((task) => task._id === id);
       if (!taskToToggle) return;
 
-      const response = await API.patch(`/tasks/${id}/toggle`, {
+      const response = await API.patch(`/tasks/${id}`, {
         completed: !taskToToggle.completed,
       });
 
@@ -364,8 +364,8 @@ const Dashboard = () => {
       
             {/* Right Illustration */}
             <div className="illustration right-illustration">
-              <img src="/src/pic/check.png" alt="Right Illustration" />
-              <img src="/src/pic/color people.jpg" alt="Right Illustration" />
+              <img src="/src/assets/pic/check.png" alt="Right Illustration" />
+              <img src="/src/assets/pic/color people.jpg" alt="Right Illustration" />
             </div>
           </div>
         </div>
