@@ -21,7 +21,7 @@ export default function AppRouter() {
           </ProtectedRoute>
         } />
         {/* Redirect unknown routes to Login */}
-        <Route path="*" element={<Login />} />  
+        <Route path="*" element={<Navigate to="/login" replace />} />  
       </Routes>
     </Router>
   );
