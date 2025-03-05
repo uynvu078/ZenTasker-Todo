@@ -67,11 +67,20 @@ router.put("/reorder", authenticateToken, async (req, res) => {
 
         console.log(" Reordering Tasks:", tasks);
 
+        const validTasks = tasks.filter(task => 
+            mongoose.Types.ObjectId.isValid(task._id) && task.userId.toString() === req.userId
+        );        
+
+        if (validTasks.length === 0) {
+            console.warn("⚠️ No valid task updates detected.");
+            return res.status(400).json({ message: "No valid task updates detected" });
+        }
+
         // Update order in the database
-        const updateOps = tasks.map((task, index) => ({
+        const updateOps = validTasks.map((task, index) => ({
             updateOne: {
                 filter: { _id: task._id, userId: req.userId },
-                update: { order: index } 
+                update: { order: index }
             }
         }));
 
@@ -83,7 +92,9 @@ router.put("/reorder", authenticateToken, async (req, res) => {
         const updateResult = await Task.bulkWrite(updateOps);
         console.log(" Task order updated successfully:", updateResult);
 
-        res.json({ message: "Task order updated successfully" });
+        const updatedTasks = await Task.find({ userId: req.userId }).sort("order");
+
+        res.json({ message: "Task order updated successfully", tasks: updatedTasks });
 
     } catch (error) {
         console.error(" Error updating task order:", error);
