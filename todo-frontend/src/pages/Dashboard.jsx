@@ -20,8 +20,8 @@ const Dashboard = () => {
 
 
   useEffect(() => {
-    fetchTasks(); 
-  }, []); 
+    fetchTasks();
+  }, []);
 
   useEffect(() => {
     const newReminders = [];
@@ -75,24 +75,25 @@ const Dashboard = () => {
 
   const toggleTask = async (id) => {
     try {
-      const taskToToggle = tasks.find((task) => task._id === id);
-      if (!taskToToggle) return;
+        const taskToToggle = tasks.find((task) => task._id === id);
+        if (!taskToToggle) return;
 
-      const response = await API.patch(`/tasks/${id}/toggle`, {
-        completed: !taskToToggle.completed,
-      });
+        const response = await API.patch(`/tasks/${id}/toggle`, { 
+            completed: !taskToToggle.completed
+        });
 
-      if (!response.data) throw new Error("No data returned from server");
+        if (!response.data) throw new Error("No data returned from server");
 
-      setTasks(tasks.map((task) =>
-        task._id === id ? response.data : task 
-      ));
+        setTasks(tasks.map((task) =>
+            task._id === id ? response.data : task
+        ));
 
-      fetchTasks();
+        fetchTasks();
     } catch (error) {
-      console.error(" Error toggling task completion:", error.response?.data || error.message);
+        console.error("Error toggling task completion:", error.response?.data || error.message);
     }
-  };
+};
+
 
   const editTask = (id, title, description, dueDate) => {
     console.log(`✏️ Editing Task ID: ${id}, Title: ${title}, Description: ${description}, Due Date: ${dueDate}`);
@@ -107,30 +108,28 @@ const Dashboard = () => {
   
 
   const saveTask = async (id) => {
-    console.log(`📤 Attempting to update Task ID: ${id}`);
-  
     try {
-      const response = await API.put(`/tasks/${id}`, {
-        title: editedTitle.trim() || "Untitled Task", 
-        description: newTaskDescription.trim() || "", 
-        dueDate: newTaskDueDate || null
-      });
-  
-      console.log(`Task updated successfully:`, response.data);
-  
-      setTasks(tasks.map((task) =>
+        const response = await API.put(`/tasks/${id}`, {
+            title: editedTitle.trim() || "Untitled Task", 
+            description: newTaskDescription.trim() || "", 
+            dueDate: newTaskDueDate || null
+        });
+
+        if (!response.data) throw new Error("No updated data received");
+
+        setTasks(tasks.map((task) =>
             task._id === id ? response.data : task
         ));
-  
-      setEditingTaskId(null);
-      setEditedTitle("");
-      setNewTaskDescription("");
-      setNewTaskDueDate("");
-  
+
+        setEditingTaskId(null);
+        setEditedTitle("");
+        setNewTaskDescription("");
+        setNewTaskDueDate("");
+
     } catch (error) {
-      console.error("Error updating task:", error.response?.data || error.message);
+        console.error("Error updating task:", error.response?.data || error.message);
     }
-  };
+};
   
 
   const deleteTask = async (id) => {

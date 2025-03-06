@@ -1,7 +1,7 @@
 const express = require("express");
 const authenticateToken = require("../middleware/authenticateToken"); // ✅ Import JWT middleware
 const Task = require("../models/Task");
-
+const mongoose = require("mongoose");
 const router = express.Router();
 
 /** 
@@ -116,12 +116,12 @@ router.put("/:id", authenticateToken, async (req, res) => {
         if (dueDate !== undefined) {
             updateFields.dueDate = dueDate ? new Date(dueDate + "T00:00:00.000Z") : null;
         }
-        if (completed !== undefined) updateFields.completed = completed; // ✅ Ensures `false` is updated too
+        if (completed !== undefined) updateFields.completed = completed; 
 
         const updatedTask = await Task.findByIdAndUpdate(
             req.params.id,
             { $set: updateFields },
-            { new: true, runValidators: true } // ✅ Returns the updated task
+            { new: true, runValidators: true }
         );
 
         if (!updatedTask) {
@@ -140,24 +140,25 @@ router.put("/:id", authenticateToken, async (req, res) => {
 
 router.patch("/:id/toggle", authenticateToken, async (req, res) => {
     try {
-        console.log(` Received toggle request: ${req.params.id}`);
+        console.log(` Toggling task ${req.params.id}`);
 
-        const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
-        
+        const task = await Task.findOneAndUpdate(
+            { _id: req.params.id, userId: req.userId },
+            { $set: { completed: req.body.completed } },
+            { new: true }
+        );
+
         if (!task) {
             console.warn(`⚠️ Task ${req.params.id} not found.`);
             return res.status(404).json({ message: "Task not found" });
         }
 
-        task.completed = !task.completed;
-
-        await task.save();
-        console.log(` Task toggled: ${task._id}, Completed: ${task.completed}`);
+        console.log(` Task updated: ${task._id}, Completed: ${task.completed}`);
 
         res.json(task);
 
     } catch (error) {
-        console.error(" Error toggling task:", error);
+        console.error("❌ Error toggling task:", error);
         res.status(500).json({ message: "Error toggling task" });
     }
 });
