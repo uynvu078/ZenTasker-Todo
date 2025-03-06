@@ -15,7 +15,7 @@ const useAuthStore = create((set) => ({
     console.log("🚪 [AuthStore] User logged out");
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    localStorage.removeItem("hasSeenReminder");
+    sessionStorage.removeItem("lastSeenReminders");
     set({ user: null, token: null });
   },
 

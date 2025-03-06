@@ -5,17 +5,17 @@ const ReminderPopup = ({ reminders, removeReminder }) => {
   const [showReminder, setShowReminder] = useState(false);
 
   useEffect(() => {
-    const hasSeenReminder = localStorage.getItem("hasSeenReminder");
+    const lastSeenReminders = sessionStorage.getItem("lastSeenReminders");
 
-    if (reminders.length > 0) {
-      if (!hasSeenReminder || hasSeenReminder !== JSON.stringify(reminders)) {
-        setShowReminder(true);
-        localStorage.setItem("hasSeenReminder", JSON.stringify(reminders)); 
-      }
+    const currentReminders = JSON.stringify(reminders);
+
+    if (reminders.length > 0 && lastSeenReminders !== currentReminders) {
+      setShowReminder(true);
+      sessionStorage.setItem("lastSeenReminders", currentReminders); 
     }
-  }, [reminders]);
+  }, [reminders]); 
 
-  if (!showReminder) return null;
+  if (!showReminder) return null; 
 
   return (
     <div className={`reminder-container ${reminders.length > 0 ? "show" : ""}`}>
@@ -28,7 +28,7 @@ const ReminderPopup = ({ reminders, removeReminder }) => {
             className="close-reminder"
             onClick={() => {
               removeReminder(reminder.id);
-              setShowReminder(false);
+              setShowReminder(false); 
             }}
           >
             ❌
