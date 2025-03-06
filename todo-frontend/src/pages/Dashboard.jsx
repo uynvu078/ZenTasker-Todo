@@ -88,7 +88,6 @@ const Dashboard = () => {
             task._id === id ? response.data : task
         ));
 
-        fetchTasks();
     } catch (error) {
         console.error("Error toggling task completion:", error.response?.data || error.message);
     }
