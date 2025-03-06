@@ -142,16 +142,15 @@ router.patch("/:id/toggle", authenticateToken, async (req, res) => {
     try {
         console.log(` Toggling task ${req.params.id}`);
 
-        const task = await Task.findOneAndUpdate(
-            { _id: req.params.id, userId: req.userId },
-            { $set: { completed: req.body.completed } },
-            { new: true }
-        );
+        const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
 
         if (!task) {
             console.warn(`⚠️ Task ${req.params.id} not found.`);
             return res.status(404).json({ message: "Task not found" });
         }
+
+        task.completed = !task.completed;
+        await task.save();
 
         console.log(` Task updated: ${task._id}, Completed: ${task.completed}`);
 
