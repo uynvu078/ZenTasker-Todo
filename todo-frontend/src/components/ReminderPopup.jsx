@@ -7,13 +7,15 @@ const ReminderPopup = ({ reminders, removeReminder }) => {
   useEffect(() => {
     const hasSeenReminder = localStorage.getItem("hasSeenReminder");
 
-    if (!hasSeenReminder && reminders.length > 0) {
-      setShowReminder(true);
-      localStorage.setItem("hasSeenReminder", "true");
+    if (reminders.length > 0) {
+      if (!hasSeenReminder || hasSeenReminder !== JSON.stringify(reminders)) {
+        setShowReminder(true);
+        localStorage.setItem("hasSeenReminder", JSON.stringify(reminders)); 
+      }
     }
   }, [reminders]);
 
-  if (!showReminder) return null; 
+  if (!showReminder) return null;
 
   return (
     <div className={`reminder-container ${reminders.length > 0 ? "show" : ""}`}>
