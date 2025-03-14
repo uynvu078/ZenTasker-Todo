@@ -85,21 +85,6 @@ body {
 
 
 /*=========================================================================================*/
-
-/* 🔹 Make Navbar Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        left: 0;
-        width: 100%;
-        justify-content: center;
-        padding: 10px;
-    }
-    .navbar .nav-link {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-    }
-}
-
 /* Navbar fade-in animation */
 @keyframes fadeIn {
     from {
@@ -125,3 +110,39 @@ body {
     width: 100%;
 }
   
+/* ------------------------------------------------------------------- */
+/* NAVBAR RESPONSIVENESS */
+@media (max-width: 768px) {
+    .navbar {
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 80px;
+    }
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        padding:  8px 12px;
+    }
+    
+    .auth-buttons, 
+    .navbar .nav-link[href*="login"],
+    .navbar .nav-link[href*="register"] {
+        display: none !important;
+    }
+    .btn-logout {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}

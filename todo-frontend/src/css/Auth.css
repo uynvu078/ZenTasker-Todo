@@ -1,33 +1,32 @@
-/* 🌿 ZenTasker: Balanced, Clean, & Elegant Authentication Styling */
 
-/* ✅ Full Page Background */
+/* Full Page Background */
 .auth-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background: #F6F3EE; /* 🏯 Soft Beige */
+    background: #F6F3EE;
     padding: 20px;
     text-align: center;
 }
 
-/* ✨ Authentication Box */
+/* Authentication Box */
 .auth-box {
-    background: rgba(255, 255, 255, 0.5); /* Soft Glass */
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
     width: 420px;
     text-align: center;
-    color: #1E1E1E; /* 🖤 Strong Readability */
+    color: #1E1E1E; 
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* 🏯 ZenTasker Branding */
+/* ZenTasker Branding */
 .brand-highlight-tab {
-    color: #5A3E2B; /* ✨ Gold Accent */
+    color: #5A3E2B; 
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(232, 188, 45, 0.595);
 }
@@ -39,21 +38,21 @@
     margin-bottom: 20px;
 }
 
-/* ✅ Input Fields */
+/* Input Fields */
 .auth-box input {
     width: 100%;
     padding: 12px;
     margin: 12px 0;
     border-radius: 8px;
-    border: 1px solid #6C9F76; /* 🍃 Soft Green Border */
+    border: 1px solid #6C9F76;
     background: rgba(255, 255, 255, 0.8);
     color: #1E1E1E;
     outline: none;
 }
 
-/* ✅ Buttons - Green with Gold Hover */
+/* Buttons - Green with Gold Hover */
 .auth-btn {
-    background: #6C9F76; /* 🍃 Soft Green Button */
+    background: #6C9F76;
     color: white;
     padding: 14px;
     font-size: 1.1rem;
@@ -65,68 +64,51 @@
     font-weight: bold;
     box-shadow: 2px 3px 10px rgba(108, 159, 118, 0.3);
 }
-
 .auth-btn:hover {
-    background: #D4AF37; /* ✨ Gold Hover */
+    background: #D4AF37; 
     color: black;
     transform: scale(1.05);
     box-shadow: 3px 5px 14px rgba(212, 175, 55, 0.5);
 }
 
-/* ✅ Links */
+/* Links */
 .auth-link {
-    color: #6C9F76; /* 🍃 Soft Green */
+    color: #6C9F76;
     font-weight: bold;
     text-decoration: none;
     display: block;
-    margin-top: 20px; /* 🔹 Added spacing */
+    margin-top: 20px;
     padding: 5px 0;
 }
-
 .auth-link:hover {
     text-decoration: underline;
 }
 
-/* ✅ Added Spacing for "Don't have an account?" */
+
 .auth-text {
-    margin-top: 20px; /* 🔹 Added more padding */
+    margin-top: 20px;
     font-size: 1rem;
     font-weight: 500;
     color: #1E1E1E;
 }
 
 .forgot-password {
-    margin: 10px 0; /* 🔹 Adds spacing */
+    margin: 10px 0; 
 }
 
 .forgot-password-link {
-    color: #6C9F76; /* 🍃 Soft Green */
+    color: #6C9F76;
     font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
 }
-
 .forgot-password-link:hover {
     text-decoration: underline;
-    color: #D4AF37; /* ✨ Gold on hover */
+    color: #D4AF37; 
 }
 
 .fade-in-tab {
     animation: fadeIn 0.75s ease-in-out;
-}
-
-/* 📱 Responsive */
-@media (max-width: 768px) {
-    .auth-box {
-        width: 90%;
-    }
-    .auth-subtitle {
-        font-size: 1.1rem;
-    }
-    .auth-btn {
-        font-size: 1rem;
-        padding: 12px;
-    }
 }
 
 
@@ -139,51 +121,46 @@
 }
 
 /*==========================================================================*/
-/* 🌿 ZenTasker: Elegant Welcome Page Styling */
 
-/* Full Page Background */
+/* Welcome Page Background */
 .welcome-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background: #F6F3EE; /* 🏯 Soft Beige Background */
+    background: #F6F3EE; 
     text-align: center;
-    color: #1E1E1E; /* 🖤 Strong Readability */
+    color: #1E1E1E;
     padding: 20px;
 }
 
-/* Welcome Content */
 .welcome-content {
-    max-width: 700px; /* 🔹 Increased width for better layout */
+    max-width: 700px; 
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* 🌟 ZenTasker Name - Gold */
 .brand-highlight {
-    color: #5A3E2B; /* ✨ Gold Accent */
+    color: #5A3E2B; 
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(232, 188, 45, 0.595);
-    font-size: 3rem; /* 🔹 Increased Size */
+    font-size: 3rem; 
 }
 
-/* Larger Subtitle */
 .subtitle {
-    font-size: 1.8rem; /* 🔹 Bigger subtitle */
+    font-size: 1.8rem;
     font-weight: 600;
     margin-top: 15px;
     opacity: 0.9;
-    color: #1E1E1E; /* 🖤 Strong Readability */
+    color: #1E1E1E; 
 }
 
-/* ✅ Get Started Button - **Gold with Green Hover** */
 .get-started-btn {
     margin-top: 30px;
     padding: 16px 32px;
-    font-size: 1.5rem; /* 🔹 Bigger Button */
+    font-size: 1.5rem; 
     font-weight: bold;
-    background: #D4AF37; /* ✨ Gold Button */
+    background: #D4AF37; 
     color: #1E1E1E;
     border: none;
     border-radius: 12px;
@@ -193,13 +170,12 @@
 }
 
 .get-started-btn:hover {
-    background: #6C9F76; /* 🍃 Soft Green Hover */
+    background: #6C9F76;
     color: white;
     transform: scale(1.08);
     box-shadow: 4px 6px 14px rgba(108, 159, 118, 0.5);
 }
 
-/* ✨ Animations */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -207,20 +183,6 @@
 
 .fade-in {
     animation: fadeIn 1.5s ease-in-out;
-}
-
-/* 📱 Responsive */
-@media (max-width: 768px) {
-    .welcome-content {
-        max-width: 90%;
-    }
-    .subtitle {
-        font-size: 1.4rem; /* Adjusted for mobile */
-    }
-    .get-started-btn {
-        font-size: 1.2rem;
-        padding: 14px 28px;
-    }
 }
 
 /*==========================================================================*/
@@ -247,38 +209,68 @@
     padding: 12px;
     margin: 10px 0;
     border-radius: 6px;
-    border: 1px solid #D4AF37; /* Gold border */
+    border: 1px solid #D4AF37;
     background: rgba(255, 255, 255, 0.05);
     color: black;
     outline: none;
 }
 
 
-
-/*=============================================================*/
-/*=============================================================*/
-
-@keyframes growFlower {
-    0% { 
-        transform: scale(0.7);  
-        opacity: 0.5; 
+/*==========================================================================*/
+/* LOGIN/SIGNUP PAGE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 10px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 13vh;
     }
-    100% { 
-        transform: scale(1);  
-        opacity: 1;
+
+    .auth-box {
+        width: 90%;
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+
+    .auth-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .auth-box input {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .auth-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .forgot-password {
+        font-size: 0.9rem;
     }
 }
 
-.flower-animation {
-    animation: growFlower 3s ease-in-out forwards; 
-}
+/*==========================================================================*/
+/* WELCOME PAGE RESPONSIVENESS */
 
-@keyframes growSway {
-    0% { transform: scale(0.7) rotate(-3deg); opacity: 0.5; }
-    50% { transform: scale(0.85) rotate(3deg); }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
-}
-
-.flower-animation {
-    animation: growSway 4s ease-in-out forwards;
+@media (max-width: 768px) {
+    .welcome-content {
+        max-width: 90%;
+        padding-top: 0px;
+    }
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    .get-started-btn {
+        font-size: 1.2rem;
+        padding: 14px 28px;
+    }
 }

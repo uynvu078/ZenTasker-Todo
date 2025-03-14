@@ -10,7 +10,6 @@ const UserSchema = new mongoose.Schema({
 // auto hash passwords before saving
 UserSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();
-    // Prevent double hashing
     if (!this.password.startsWith("$2b$")) {
         this.password = await bcrypt.hash(this.password, 10);
     }

@@ -232,20 +232,21 @@ const Dashboard = () => {
               onChange={(e) => setNewTaskDueDate(e.target.value)} 
             />
 
+            <div className="category-priority">
+              {/* Priority Selector */}
+              <select className="form-select smaller-select color-select" value={newTaskPriority} onChange={(e) => setNewTaskPriority(e.target.value)}>
+                <option value="low">🍃 Low</option>
+                <option value="normal">⏳ Normal</option>
+                <option value="high">🔥 High</option>
+              </select>
 
-            {/* Priority Selector */}
-            <select className="form-select smaller-select color-select" value={newTaskPriority} onChange={(e) => setNewTaskPriority(e.target.value)}>
-              <option value="low">🍃 Low</option>
-              <option value="normal">⏳ Normal</option>
-              <option value="high">🔥 High</option>
-            </select>
-
-            {/* Category Selector */}
-            <select className="form-select smaller-select color-select" value={newTaskCategory} onChange={(e) => setNewTaskCategory(e.target.value)}>
-              <option value="work">🖥 Work</option>
-              <option value="personal">🏡 Personal</option>
-              <option value="other">📝 Other</option>
-            </select>
+              {/* Category Selector */}
+              <select className="form-select smaller-select color-select" value={newTaskCategory} onChange={(e) => setNewTaskCategory(e.target.value)}>
+                <option value="work">🖥 Work</option>
+                <option value="personal">🏡 Personal</option>
+                <option value="other">📝 Other</option>
+              </select>
+            </div>
 
             <button className="btn btn-primary" onClick={addTask}>Add</button>
           </div>
@@ -274,7 +275,7 @@ const Dashboard = () => {
 
 
             {/* Filter Dropdown */}
-            <div>
+            <div className="filter-container">
               <label className="me-2 fw-bold">Filter By:</label>
               <select 
                   className="form-select d-inline-block w-auto filter-select"
