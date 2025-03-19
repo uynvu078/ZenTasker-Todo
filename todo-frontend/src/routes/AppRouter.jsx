@@ -15,7 +15,7 @@ export default function AppRouter() {
     <Router>
       <Routes>
 
-        <Route path="/" element={<Navigate to="/welcome" replace />} />
+        <Route path="/" element={<Navigate to="/#/welcome" replace />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -31,7 +31,7 @@ export default function AppRouter() {
           }
         />
 
-        <Route path="*" element={<Navigate to="/welcome" replace />} /> 
+        <Route path="*" element={<Navigate to="/#/welcome" replace />} /> 
       </Routes>
     </Router>
   );
