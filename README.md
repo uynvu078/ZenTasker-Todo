@@ -38,10 +38,6 @@ cd zentasker
 ```
 
 ### **2. Setup Backend**
-```sh
-cd backend
-npm install
-```
 
 - Create a **.env** file in the backend root directory and configure it:
 ```env
@@ -52,7 +48,7 @@ JWT_SECRET=your_secret_key
 
 - Start the backend server:
 ```sh
-npm run dev
+node server.js
 ```
 
 ### **3. Setup Frontend**
