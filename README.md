@@ -80,7 +80,25 @@ npm run dev
 ---
 
 ## 📷 Screenshots
-_(Add screenshots of the login page, dashboard, and task management UI here)_
+
+Get a sneak peek of ZenTasker in action! Below are some screenshots showcasing the app's intuitive and user-friendly interface.
+
+### Welcome Page
+![Welcome Page](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/welcome.png)  
+The first screen users see when they visit ZenTasker. It provides a clean and inviting introduction, encouraging users to sign in or register.
+
+### Login Page
+![Login Page](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/login.png)  
+The secure login page where users can sign in to access their tasks.
+
+### Dashboard
+![Dashboard](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/dashboard.png)  
+The main dashboard where users can manage, categorize, and prioritize their tasks with ease.
+
+### Edit Task Page
+![Edit Task Page](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/tasks.png)  
+This page allows users to edit their tasks, update descriptions, set new due dates, and change task priorities.
+
 
 ---
 
