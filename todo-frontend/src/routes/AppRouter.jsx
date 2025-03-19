@@ -15,8 +15,8 @@ export default function AppRouter() {
     <Router>
       <Routes>
 
-        <Route path="/" element={user ? <Navigate to="/dashboard" replace /> : <Welcome />} />
-        {/* <Route path="/" element={<Welcome />} /> */}
+        <Route path="/" element={<Navigate to="/welcome" replace />} />
+        <Route path="/welcome" element={<Welcome />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -31,12 +31,12 @@ export default function AppRouter() {
                 <Dashboard />
               </ProtectedRoute>
             ) : (
-              <Navigate to="/" replace />
+              <Navigate to="/welcome" replace />
             )
           }
         />
 
-        <Route path="*" element={<Navigate to="/" replace />} /> 
+        <Route path="*" element={<Navigate to="/welcome" replace />} /> 
       </Routes>
     </Router>
   );
