@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// trigger redeploy
 export default defineConfig({
   plugins: [react()],
-  base: '/ZenTasker-Todo/',
+  base: process.env.NODE_ENV === "production" ? "/ZenTasker-Todo/" : "/",
 });
+

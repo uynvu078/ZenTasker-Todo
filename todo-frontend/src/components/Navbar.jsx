@@ -25,8 +25,8 @@ const Navbar = () => {
             </button>
           ) : (
             <>
-              <Link className="nav-link" to="#/login">Login</Link>
-              <Link className="nav-link" to="#/register">Register</Link>
+              <Link className="nav-link" to="/login">Login</Link>
+              <Link className="nav-link" to="/register">Register</Link>
             </>
           )}
         </div>

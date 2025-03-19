@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 const useAuthStore = create((set) => ({
-  user: JSON.parse(localStorage.getItem("user")) || null,
-  token: localStorage.getItem("token") || null,
+  user: null,
+  token: null,
 
   login: (user, token) => {
     console.log("[AuthStore] User logged in:", user, token);
@@ -28,7 +28,6 @@ const useAuthStore = create((set) => ({
   },
 }));
 
-// Rehydrate Zustand state on app start
 useAuthStore.getState().rehydrate();
 
 export default useAuthStore;
