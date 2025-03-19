@@ -53,7 +53,7 @@ node server.js
 
 ### **3. Setup Frontend**
 ```sh
-cd ../frontend
+cd ../todo-frontend
 npm install
 ```
 
