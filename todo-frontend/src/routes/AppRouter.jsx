@@ -15,7 +15,7 @@ export default function AppRouter() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<Forgot />} />
 
-        {/* ✅ Protect Dashboard */}
+        {/* Protect Dashboard */}
         <Route
           path="/dashboard"
           element={
@@ -25,8 +25,7 @@ export default function AppRouter() {
           }
         />
 
-        {/* ✅ Explicitly Redirect Unknown Routes to Login */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
