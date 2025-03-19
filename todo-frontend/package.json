@@ -1,6 +1,7 @@
 {
   "name": "todo-frontend",
   "private": true,
+  "homepage": "https://uynvu078.github.io/ZenTasker-Todo/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
