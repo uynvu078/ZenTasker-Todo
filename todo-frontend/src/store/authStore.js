@@ -1,18 +1,18 @@
 import { create } from "zustand";
 
 const useAuthStore = create((set) => ({
-  user: null,
-  token: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
+  token: localStorage.getItem("token") || null,
 
   login: (user, token) => {
-    console.log("✅ [AuthStore] User logged in:", user, token);
+    console.log("[AuthStore] User logged in:", user, token);
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("token", token);
     set({ user, token });
   },
 
   logout: () => {
-    console.log("🚪 [AuthStore] User logged out");
+    console.log("[AuthStore] User logged out");
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     sessionStorage.removeItem("lastSeenReminders");
