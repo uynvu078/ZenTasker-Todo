@@ -2,7 +2,7 @@
 
 ZenTasker is your go-to task management companion, designed to keep you organized, focused, and stress-free. With smart features like secure authentication, easy task categorization, helpful reminders, and a smooth drag-and-drop interface, managing your to-dos has never been this effortless!
 
-## 🚀 Features
+## Features
 - **User Authentication**: Secure registration and login with JWT authentication.
 - **Task Management**: Create, edit, complete, and delete tasks.
 - **Task Prioritization**: Assign priority levels (Low, Normal, High).
@@ -13,7 +13,7 @@ ZenTasker is your go-to task management companion, designed to keep you organize
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 ### **Frontend:**
 - React.js (Vite)
 - React Router
@@ -30,7 +30,7 @@ ZenTasker is your go-to task management companion, designed to keep you organize
 
 ---
 
-## 🏗️ Installation & Setup
+## Installation & Setup
 ### **1. Clone the Repository**
 ```sh
 git clone https://github.com/your-username/zentasker.git
@@ -69,7 +69,7 @@ npm run dev
 
 ---
 
-## 📌 Usage
+## Usage
 - **Register/Login** to access the dashboard.
 - **Add new tasks** with title, description, due date, priority, and category.
 - **Drag & Drop** tasks to reorder.
@@ -103,14 +103,14 @@ This page allows users to edit their tasks, update descriptions, set new due dat
 ---
 
 ## 🚧 Future Enhancements
-- ✅ Dark Mode
-- ✅ Recurring Tasks
-- ✅ Collaborative Task Sharing
-- ✅ Push Notifications
+- 🛠️ Dark Mode
+- 🛠️ Recurring Tasks
+- 🛠️ Collaborative Task Sharing
+- 🛠️ Push Notifications
 
 ---
 
-## 🤝 Contributing
+## Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature-branch`)
@@ -120,12 +120,12 @@ Contributions are welcome! To contribute:
 
 ---
 
-## 📝 License
+## License
 This project is licensed under the MIT License.
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 Special thanks to all contributors and open-source libraries that made this project possible!
 
 ---
