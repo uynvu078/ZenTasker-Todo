@@ -4,6 +4,8 @@ import API from "../api/axiosInstance";
 import useAuthStore from "../store/authStore";
 import Sidebar from "../components/Sidebar";
 import ReminderPopup from "../components/ReminderPopup";
+import checkImg from '../assets/check.png';
+import peopleImg from '../assets/color people.jpg';
 
 const Dashboard = () => {
   const { user } = useAuthStore();
@@ -362,8 +364,8 @@ const Dashboard = () => {
       
             {/* Right Illustration */}
             <div className="illustration right-illustration">
-              <img src="/check.png" alt="Checkmark" />
-              <img src="/color people.jpg" alt="Right Illustration" />
+              <img src={checkImg} alt="Checkmark" />
+              <img src={peopleImg} alt="Right Illustration" />
             </div>
           </div>
         </div>
