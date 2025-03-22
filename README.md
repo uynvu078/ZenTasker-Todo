@@ -14,14 +14,14 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 **JWT Authentication** – Secure registration and login
-- 📝 **Task Management** – Create, edit, delete, and complete tasks
-- 🔀 **Drag & Drop Sorting** – Reorder tasks easily with DnD
-- 📊 **Prioritize & Categorize** – Assign priorities and categories like Work, Personal, and Other
-- ⏰ **Smart Reminders** – Alerts for tasks due today or tomorrow
-- 📱 **Responsive Design** – Optimized for both desktop and mobile
+- **JWT Authentication** – Secure registration and login
+- **Task Management** – Create, edit, delete, and complete tasks
+- **Drag & Drop Sorting** – Reorder tasks easily with DnD
+- **Prioritize & Categorize** – Assign priorities and categories like Work, Personal, and Other
+- **Smart Reminders** – Alerts for tasks due today or tomorrow
+- **Responsive Design** – Optimized for both desktop and mobile
 
 ---
 
@@ -42,7 +42,7 @@
 
 ---
 
-## 🧩 Project Setup
+## Project Setup
 
 ### 1. Clone the Repository
 
@@ -89,7 +89,7 @@ npm run dev
 
 ---
 
-## 🧪 Usage Guide
+## Usage Guide
 
 - **Register or Login** to get started
 - **Add tasks** with title, description, due date, priority, and category
@@ -102,13 +102,13 @@ npm run dev
 
 ## 📸 Screenshots
 
-### 🖼️ Welcome Page  
+### Welcome Page  
 ![Welcome](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/welcome.png)
 
-### 🔐 Login  
+### Login  
 ![Login](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/login.png)
 
-### 🧮 Dashboard  
+### Dashboard  
 ![Dashboard](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/dashboard.png)
 
 ### ✏️ Edit Task  
@@ -116,17 +116,17 @@ npm run dev
 
 ---
 
-## 🧠 Planned Features
+## Planned Future Features
 
-- 🌙 Dark Mode  
-- 🔁 Recurring Tasks  
-- 📅 Calendar View  
-- 👥 Task Sharing & Collaboration  
-- 🔔 Real-Time Notifications
+- Dark Mode  
+- Recurring Tasks  
+- Calendar View  
+- Task Sharing & Collaboration  
+- Real-Time Notifications
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!  
 Here’s how to get started:
@@ -137,20 +137,14 @@ git checkout -b your-feature-branch
 # Make changes, then:
 git commit -m "Add: your feature"
 git push origin your-feature-branch
-# Create a Pull Request 🎉
+# Create a Pull Request 
 ```
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgments
-
-Big thanks to the open-source community and libraries that helped bring ZenTasker to life.
 
 ---
 
