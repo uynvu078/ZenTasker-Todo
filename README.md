@@ -111,7 +111,7 @@ npm run dev
 ### Dashboard  
 ![Dashboard](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/dashboard.png)
 
-### ✏️ Edit Task  
+### Edit Task  
 ![Edit Task](https://github.com/uynvu078/ZenTasker-Todo/blob/main/screenshots/tasks.png)
 
 ---
