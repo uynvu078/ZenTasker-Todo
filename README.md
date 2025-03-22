@@ -105,6 +105,7 @@ This page allows users to edit their tasks, update descriptions, set new due dat
 ## 🚧 Future Enhancements
 - 🛠️ Dark Mode
 - 🛠️ Recurring Tasks
+- 🛠️ Calendar Views
 - 🛠️ Collaborative Task Sharing
 - 🛠️ Push Notifications
 
