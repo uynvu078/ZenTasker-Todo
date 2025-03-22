@@ -6,20 +6,24 @@ const app = express();
 const authenticateToken = require("./middleware/authenticateToken");
 
 app.use(express.json());
-app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-}));
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:5173");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.header("Access-Control-Allow-Credentials", "true"); 
-    next();
-});
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://uynvu078.github.io"
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("CORS not allowed for this origin: " + origin));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true
+  }));
 
 const authRoutes = require('./routes/auth'); 
 const taskRoutes = require('./routes/tasks'); 
