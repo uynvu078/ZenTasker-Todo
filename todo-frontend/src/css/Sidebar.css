@@ -106,7 +106,6 @@
     }
     
     .sidebar-menu {
-        flex-grow: 1;
         list-style: none;
         padding: 10px;
         margin-top: 20px;
@@ -153,16 +152,20 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .sidebar {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
-    
+  
+    .sidebar-menu {
+      flex-grow: 0;
+    }
+  
     .sidebar-bottom {
-        margin-top: auto;
-        margin-bottom: auto;
-        display: flex;
-        justify-content: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      display: flex;
+      justify-content: center;
     }
-}
+  }
