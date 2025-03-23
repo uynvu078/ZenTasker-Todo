@@ -152,3 +152,17 @@
         pointer-events: none;
     }
 }
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sidebar-bottom {
+        margin-top: auto;
+        margin-bottom: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
