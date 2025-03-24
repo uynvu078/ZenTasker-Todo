@@ -6,11 +6,9 @@
 
 ## 🚀 Live Demo
 
-🌐 **Frontend (GitHub Pages):**  
-[ZenTasker-Todo Live Demo](https://uynvu078.github.io/ZenTasker-Todo)
+🌐 **Frontend (GitHub Pages):**  [ZenTasker-Todo Live Demo](https://uynvu078.github.io/ZenTasker-Todo)
 
-🌐 **Backend (Render):**  
-[Backend API](https://zentasker-4ear.onrender.com)
+🌐 **Backend (Render):**  [Backend API](https://zentasker-4ear.onrender.com)
 
 ---
 
